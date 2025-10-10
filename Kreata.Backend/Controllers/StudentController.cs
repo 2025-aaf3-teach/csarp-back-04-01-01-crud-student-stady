@@ -33,6 +33,9 @@ namespace Kreata.Backend.Controllers
             // Ha nincs akkor nem lehet töröln
             if (student is null)
                 return NotFound();
+            // Törlés és contextus változásainak mentése
+            _context.Entry(student).State = EntityState.Deleted;
+            await _context.SaveChangesAsync();
 
             return Ok();
         }
