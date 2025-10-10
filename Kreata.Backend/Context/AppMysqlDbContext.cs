@@ -2,9 +2,9 @@
 
 namespace MyApp.Backend.Context
 {
-    public class AppMysqlContext : AppContext
+    public class AppMysqlDbContext : AppDbContext
     {
-        public AppMysqlContext(DbContextOptions<AppMysqlContext> options) : base(options)
+        public AppMysqlDbContext(DbContextOptions<AppMysqlDbContext> options) : base(options)
         {
         }
 

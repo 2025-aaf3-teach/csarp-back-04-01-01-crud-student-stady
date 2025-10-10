@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MyApp.Backend.Context
 {
-    public class AppContext : DbContext
+    public class AppDbContext : DbContext
     {
         /// <summary>
         /// Termékek
         /// </summary>
         public DbSet<Student> Students { get; set; }
 
-        public AppContext(DbContextOptions options) : base(options)
+        public AppDbContext(DbContextOptions options) : base(options)
         {
         }
     }

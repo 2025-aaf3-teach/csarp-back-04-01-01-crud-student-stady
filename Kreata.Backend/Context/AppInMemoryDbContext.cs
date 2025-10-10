@@ -2,17 +2,17 @@
 
 namespace MyApp.Backend.Context
 {
-    public class AppInMemoryContext : AppContext
+    public class AppInMemoryDbContext : AppDbContext
     {
-        public AppInMemoryContext()
-            : base(new DbContextOptionsBuilder<AppInMemoryContext>()
+        public AppInMemoryDbContext()
+            : base(new DbContextOptionsBuilder<AppInMemoryDbContext>()
                   .UseInMemoryDatabase("TestDb")
               .Options)
         {
             Database.EnsureCreated();
         }
 
-        public AppInMemoryContext(DbContextOptions<AppInMemoryContext> options) : base(options)
+        public AppInMemoryDbContext(DbContextOptions<AppInMemoryDbContext> options) : base(options)
         {
         }
 

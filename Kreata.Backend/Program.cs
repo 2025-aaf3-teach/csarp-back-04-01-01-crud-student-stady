@@ -19,7 +19,7 @@ var app = builder.Build();
 // InMemory database data
 using (var scope = app.Services.CreateAsyncScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppInMemoryContext>();
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppInMemoryDbContext>();
 
     // InMemory test data
     dbContext.Database.EnsureCreated();

@@ -2,9 +2,9 @@
 
 namespace MyApp.Backend.Context
 {
-    public class AppSqliteContext : AppContext
+    public class AppSqliteDbContext : AppDbContext
     {
-        public AppSqliteContext(DbContextOptions<AppSqliteContext> options) : base(options)
+        public AppSqliteDbContext(DbContextOptions<AppSqliteDbContext> options) : base(options)
         {
         }
 

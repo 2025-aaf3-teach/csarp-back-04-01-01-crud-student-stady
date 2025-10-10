@@ -24,7 +24,7 @@ namespace Kreata.Backend.Extensions
         public static void ConfigureInMemoryContext(this IServiceCollection services)
         {
             string dbNameKretaContext = "Kreta" + Guid.NewGuid();
-            services.AddDbContext<AppInMemoryContext>
+            services.AddDbContext<AppInMemoryDbContext>
             (
                  options => options.UseInMemoryDatabase(databaseName: dbNameKretaContext),
                  ServiceLifetime.Scoped,
