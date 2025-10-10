@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Kreata.Backend.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyApp.Backend.Context;
 
@@ -27,6 +28,9 @@ namespace Kreata.Backend.Controllers
         [HttpDelete("{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
+            // Azt lehet törölni ami van
+            Student? student = await _context.Students.FirstOrDefaultAsync(s => s.Id == id);
+
             return Ok();
         }
     }
