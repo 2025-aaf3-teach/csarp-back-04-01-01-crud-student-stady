@@ -8,13 +8,19 @@ namespace Kreata.Backend.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
-        private AppInMemoryDbContext _context=new AppInMemoryDbContext();
+        private AppInMemoryDbContext _context = new AppInMemoryDbContext();
 
         [HttpGet("count")]
         public async Task<IActionResult> GetNumberOfStudent()
         {
             int count = await _context.Students.CountAsync();
             return Ok(new { count });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetStudents()
+        {
+            return Ok(await _context.Students.ToListAsync());
         }
     }
 }
