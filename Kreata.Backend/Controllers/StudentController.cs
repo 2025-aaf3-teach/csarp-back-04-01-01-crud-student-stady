@@ -30,6 +30,8 @@ namespace Kreata.Backend.Controllers
         {
             // Azt lehet törölni ami van
             Student? student = await _context.Students.FirstOrDefaultAsync(s => s.Id == id);
+            if (student == null)
+                return NotFound();
 
             return Ok();
         }
