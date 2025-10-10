@@ -24,5 +24,10 @@ namespace Kreata.Backend.Controllers
         }
 
         // Törlés id alapján: DELETE (DELETE /api/student/{id})
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            return Ok();
+        }
     }
 }
