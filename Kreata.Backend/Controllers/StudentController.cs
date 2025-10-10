@@ -13,7 +13,7 @@ namespace Kreata.Backend.Controllers
         [HttpGet("count")]
         public async Task<IActionResult> GetNumberOfStudent()
         {
-            int count = await _context.Student.CountAsync();
+            int count = await _context.Students.CountAsync();
             return Ok(new { count });
         }
     }
