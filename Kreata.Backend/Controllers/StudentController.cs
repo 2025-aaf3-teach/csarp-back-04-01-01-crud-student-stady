@@ -22,5 +22,7 @@ namespace Kreata.Backend.Controllers
         {
             return Ok(await _context.Students.ToListAsync());
         }
+
+        // Törlés id alapján: DELETE (DELETE /api/student/{id})
     }
 }
